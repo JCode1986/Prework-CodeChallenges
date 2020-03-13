@@ -9,7 +9,11 @@ namespace Prework_CodeChallenges
     {
         static void GetNumbersInArray(int[] arr)
         {
-            foreach (int num in arr) Console.WriteLine(num);
+            foreach (int num in arr) 
+            {
+                Console.Write($"{num}, ");
+            }
+            Console.WriteLine();
         }
         static int ArrayMaxResult(int[] arr, int num)
         {
@@ -44,7 +48,7 @@ namespace Prework_CodeChallenges
         {
             int[] result = new int[3];
             int rowSum = 0;
-            string str = "";
+            string str = "\nProblem #4\n";
             for (int i = 0; i < 3; i++)
                 {
                 for (int j = 0; j < 5; j++)
@@ -80,7 +84,6 @@ namespace Prework_CodeChallenges
                 { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } 
             };
             SumOfRows(mArray);
-
         }
     }
 }
