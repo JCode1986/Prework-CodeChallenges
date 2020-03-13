@@ -1,0 +1,11 @@
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/bin/Debug/netcoreapp3.1/Prework-CodeChallenges
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/bin/Debug/netcoreapp3.1/Prework-CodeChallenges.deps.json
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/bin/Debug/netcoreapp3.1/Prework-CodeChallenges.runtimeconfig.json
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/bin/Debug/netcoreapp3.1/Prework-CodeChallenges.runtimeconfig.dev.json
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/bin/Debug/netcoreapp3.1/Prework-CodeChallenges.dll
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/bin/Debug/netcoreapp3.1/Prework-CodeChallenges.pdb
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/obj/Debug/netcoreapp3.1/Prework-CodeChallenges.csprojAssemblyReference.cache
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/obj/Debug/netcoreapp3.1/Prework-CodeChallenges.AssemblyInfoInputs.cache
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/obj/Debug/netcoreapp3.1/Prework-CodeChallenges.AssemblyInfo.cs
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/obj/Debug/netcoreapp3.1/Prework-CodeChallenges.dll
+/home/joseph/codefellows/401-dotnet/Prework-CodeChallenges/obj/Debug/netcoreapp3.1/Prework-CodeChallenges.pdb
