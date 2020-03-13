@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 namespace Prework_CodeChallenges
 {
     class Program
     {
+        static void GetNumbersInArray(int[] arr)
+        {
+            foreach (int num in arr) Console.WriteLine(num);
+        }
         static int ArrayMaxResult(int[] arr, int num)
         {
             int count = 0;
@@ -33,6 +39,24 @@ namespace Prework_CodeChallenges
             }
             Console.WriteLine((sum == product) ? "Yes" : "No"); 
         }
+
+        static void SumOfRows(int[,] arr)
+        {
+            int[] result = new int[3];
+            int rowSum = 0;
+            string str = "";
+            for (int i = 0; i < 3; i++)
+                {
+                for (int j = 0; j < 5; j++)
+                {
+                    rowSum += arr[i, j];
+                }
+                    result[i] = rowSum;
+                    str += $"Row Sum for {i + 1} sub array is {rowSum}\n";
+                    rowSum = 0;
+                }
+            Console.WriteLine(str);
+        }
         static void Main(string[] args)
         {
             //Problem #1
@@ -49,6 +73,14 @@ namespace Prework_CodeChallenges
             int[] arr2 = {0, 0, 0};
             int[] arr3 = {1, 2, 3, 4, 5};
             PerfectSequence(arr1);
+
+            //Problem #4
+            int[,] mArray = new int[3, 5]
+            { 
+                { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } 
+            };
+            SumOfRows(mArray);
+
         }
     }
 }
