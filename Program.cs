@@ -12,15 +12,12 @@ namespace Prework_CodeChallenges
             }
             Console.WriteLine();
         }
-        static int ArrayMaxResult(int[] arr, int num)
+        public static int ArrayMaxResult(int[] arr, int num)
         {
             int count = 0;
             foreach(int i in arr)
             {
-                if(i == num)
-                {
-                    count++;
-                }
+                if(i == num) count++;
             }
             return (count > 1) ? count * num : num;
         }
