@@ -27,9 +27,7 @@ namespace Prework_CodeChallenges
 
         public static string LeapYearCalculator(int year)
         {
-            if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) return $"{year} is a Leap Year.";
-            else 
-            return $"{year} is not a Leap Year"; 
+            return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ? $"{year} is a Leap Year." : $"{year} is not a Leap Year"; 
         }
 
         public static string PerfectSequence(int[] arr)
@@ -61,23 +59,24 @@ namespace Prework_CodeChallenges
         }
         static void Main(string[] args)
         {
+
             //Problem #1
-            Console.WriteLine("Problem #1 Array Max Result");
+            Console.WriteLine("************Problem #1 Array Max Result************");
             int [] array = {1, 2, 3, 4, 4, 4, 5};
             int num = 4;
-            Console.WriteLine($"Result with duplicate number: {ArrayMaxResult(array, num)}");
+            Console.WriteLine($"Result with duplicate target number: {ArrayMaxResult(array, num)}");
             Console.WriteLine($"Result with only unique numbers: {ArrayMaxResult(array, 2)}");
             Console.WriteLine();
             
             //Problem #2
-            Console.WriteLine("Problem #2 Leap Year Calculator");
+            Console.WriteLine("************Problem #2 Leap Year Calculator************");
             int[] years = {1986, 2000, 1453, 1993};
             Console.WriteLine($"Result Leap Year: {LeapYearCalculator(years[0])}");
             Console.WriteLine($"Result Not Leap Year: {LeapYearCalculator(years[1])}");
             Console.WriteLine();
 
             //Problem #3
-            Console.WriteLine("Problem #3 Perfect Sequence");
+            Console.WriteLine("************Problem #3 Perfect Sequence************");
             int[] arr1 = {1, 2, 3};
             int[] arr2 = {0, 0, 0};
             int[] arr3 = {1, 2, 3, 4, 5};
@@ -98,9 +97,9 @@ namespace Prework_CodeChallenges
                 { 1, 2, 3, 4, 5, 6, 7, 23 }, { 6, 7, 8, 9, 10, 11, 12, 40 }, { 11, 12, 13, 14, 15, 16,17, 69 }, 
                 { 1, 2, 3, 4, 5, 6, 10, 420 } 
             };
-            Console.WriteLine("Problem #4 Sum of Rows");
-            Console.WriteLine($"Result 1:\n{SumOfRows(mArrayOne)}");
-            Console.WriteLine($"Result 2:\n{SumOfRows(mArrayTwo)}");
+            Console.WriteLine("************Problem #4 Sum of Rows************");
+            Console.WriteLine($"Result 1 with {mArrayOne.GetLength(0)} Rows:\n{SumOfRows(mArrayOne)}");
+            Console.WriteLine($"Result 2 with {mArrayTwo.GetLength(0)} Rows:\n{SumOfRows(mArrayTwo)}");
         }
     }
 }
