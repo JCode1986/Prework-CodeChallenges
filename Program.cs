@@ -20,9 +20,11 @@ namespace Prework_CodeChallenges
         public static string GetNumbersInJaggedArray(int[,] arr)
         {
             string str = "Arrays: \n   {\n";
-            for (int x = 0; x < arr.GetLength(0); x ++) {
+            for(int x = 0; x < arr.GetLength(0); x ++) 
+            {
                 str += "\t{ ";
-                for (int y = 0; y < arr.GetLength(1); y ++) {
+                for(int y = 0; y < arr.GetLength(1); y ++) 
+                {
                     str += $"{Convert.ToString(arr[x, y])}, ";
                 }
                 str += "},\n";
@@ -43,19 +45,26 @@ namespace Prework_CodeChallenges
         public static string ArrayMaxResult()
         {
             Console.WriteLine("Enter size of array: ");
+
             int sizeInput = int.Parse(Console.ReadLine());
+
             int[] arrayInput = new int[sizeInput]; 
+
             GetUserInputArray(arrayInput);
             GetNumbersInArray(arrayInput);
 
             Console.WriteLine("Enter an Integer");
+
             int target = int.Parse(Console.ReadLine());
+
             int count = 0;
 
-            foreach(int i in arrayInput){      
+            foreach(int i in arrayInput)
+            {      
                 if(i == target) count++;
             }
-            int check = (count > 1) ? count * target : target;
+
+            int check = count > 1 ? count * target : target;
             return $"Result: {check}";
         }
 
@@ -63,9 +72,8 @@ namespace Prework_CodeChallenges
         {
             Console.WriteLine("Enter a year: ");
             int year  = int.Parse(Console.ReadLine());
-            return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ? $"{year} is a Leap Year." : $"{year} is not a Leap Year"; 
+            return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0) ? $"{year} is a Leap Year." : $"{year} is not a Leap Year"; 
         }
-
 
         public static string PerfectSequence()
         {
@@ -81,7 +89,7 @@ namespace Prework_CodeChallenges
                 product *= num;
             }
             string str = "Perfect Sequence?: ";
-            return (sum == product) ? $"{str}Yes" : $"{str}No"; 
+            return sum == product ? $"{str}Yes" : $"{str}No"; 
         }
 
         public static string SumOfRows(int[,] arr)
@@ -89,8 +97,10 @@ namespace Prework_CodeChallenges
             int[] result = new int[arr.Length];
             int rowSum = 0;
             string str = "";
-            for (int x = 0; x < arr.GetLength(0); x ++) {
-                for (int y = 0; y < arr.GetLength(1); y ++) {
+            for(int x = 0; x < arr.GetLength(0); x ++) 
+            {
+                for(int y = 0; y < arr.GetLength(1); y ++) 
+                {
                     rowSum += arr[x, y];
                 }
                     result[x] = rowSum;
@@ -102,9 +112,13 @@ namespace Prework_CodeChallenges
         public static string SumOfRows()
         {
             Console.WriteLine("Enter size of sub-arrays: ");
+
             int sizeInput = int.Parse(Console.ReadLine());
+
             Console.WriteLine("Enter number of array elements in sub array: ");
-            int arrayElement = int.Parse(Console.ReadLine());            
+
+            int arrayElement = int.Parse(Console.ReadLine()); 
+            
             int[,] arrayInput = new int[sizeInput,arrayElement];
 
             for (int x = 0; x < arrayInput.GetLength(0); x ++) 
@@ -116,9 +130,11 @@ namespace Prework_CodeChallenges
                     GetNumbersInJaggedArray(arrayInput);
                 }
             } 
+
             int[] result = new int[sizeInput];
             int rowSum = 0;
             string str = "";
+
             for (int x = 0; x < arrayInput.GetLength(0); x ++) 
             {
                 for (int y = 0; y < arrayInput.GetLength(1); y ++) 
@@ -133,7 +149,7 @@ namespace Prework_CodeChallenges
         }
         static void Main(string[] args)
         {
-            // Problem #1
+            //Problem #1
             Console.WriteLine("************Problem #1 Array Max Result************");
             Console.WriteLine(ArrayMaxResult());
             
