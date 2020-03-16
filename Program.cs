@@ -53,10 +53,17 @@ namespace Prework_CodeChallenges
             return $"Result: {check}";
         }
 
-        public static string LeapYearCalculator(int year)
+        // public static string LeapYearCalculator(int year)
+        // {
+        //     return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ? $"{year} is a Leap Year." : $"{year} is not a Leap Year"; 
+        // }
+        public static string LeapYearCalculator()
         {
+            Console.WriteLine("Enter a year: ");
+            int year  = int.Parse(Console.ReadLine());
             return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ? $"{year} is a Leap Year." : $"{year} is not a Leap Year"; 
         }
+
 
         public static string PerfectSequence(int[] arr)
         {
@@ -92,11 +99,8 @@ namespace Prework_CodeChallenges
             Console.WriteLine(ArrayMaxResult());
             
             //Problem #2
-        //     Console.WriteLine("************Problem #2 Leap Year Calculator************");
-        //     int[] years = {1986, 2000, 1453, 1993};
-        //     Console.WriteLine($"Result Leap Year: {LeapYearCalculator(years[0])}");
-        //     Console.WriteLine($"Result Not Leap Year: {LeapYearCalculator(years[1])}");
-        //     Console.WriteLine();
+            Console.WriteLine("************Problem #2 Leap Year Calculator************");
+            Console.WriteLine(LeapYearCalculator());
 
         //     //Problem #3
         //     Console.WriteLine("************Problem #3 Perfect Sequence************");
