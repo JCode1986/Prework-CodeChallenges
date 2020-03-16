@@ -10,53 +10,55 @@ namespace Prework_CodeChallenges
         public static string GetNumbersInArray(int[] arr)
         {
             string str = "Array: ";
-            foreach (int num in arr) 
+            foreach(int num in arr) 
             {
-                str += Convert.ToString(num);
-                str += ", ";
+                str += $"{Convert.ToString(num)}, ";
             }
             return str;
         }
+
+        public static string GetNumbersInJaggedArray(int[,] arr)
+        {
+            string str = "Arrays: \n   {\n";
+            for (int x = 0; x < arr.GetLength(0); x ++) {
+                str += "\t{ ";
+                for (int y = 0; y < arr.GetLength(1); y ++) {
+                    str += $"{Convert.ToString(arr[x, y])}, ";
+                }
+                str += "},\n";
+            }            
+            return str + "   }";
+        }
+
+        public static void GetUserInputArray(int [] array)
+        {
+            for(int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"Index {i}: Enter element: ");
+                array[i] = int.Parse(Console.ReadLine());
+                Console.WriteLine(GetNumbersInArray(array));
+            }
+        }
         
-        // public static int ArrayMaxResult(int[] arr, int num)
-        // {
-        //     int count = 0;
-        //     foreach(int i in arr)
-        //     {
-        //         if(i == num) count++;
-        //     }
-        //     return (count > 1) ? count * num : num;
-        // }
         public static string ArrayMaxResult()
         {
             Console.WriteLine("Enter size of array: ");
             int sizeInput = int.Parse(Console.ReadLine());
             int[] arrayInput = new int[sizeInput]; 
-
-            for(int i = 0; i < arrayInput.Length; i++)
-            {
-                Console.WriteLine($"{i + 1}: Enter element");
-                arrayInput[i] = int.Parse(Console.ReadLine());
-                Console.WriteLine(GetNumbersInArray(arrayInput));
-            }
-
+            GetUserInputArray(arrayInput);
             GetNumbersInArray(arrayInput);
+
             Console.WriteLine("Enter an Integer");
             int target = int.Parse(Console.ReadLine());
-
             int count = 0;
-            foreach(int i in arrayInput)
-            {
+
+            foreach(int i in arrayInput){      
                 if(i == target) count++;
             }
             int check = (count > 1) ? count * target : target;
             return $"Result: {check}";
         }
 
-        // public static string LeapYearCalculator(int year)
-        // {
-        //     return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ? $"{year} is a Leap Year." : $"{year} is not a Leap Year"; 
-        // }
         public static string LeapYearCalculator()
         {
             Console.WriteLine("Enter a year: ");
@@ -65,16 +67,21 @@ namespace Prework_CodeChallenges
         }
 
 
-        public static string PerfectSequence(int[] arr)
+        public static string PerfectSequence()
         {
+            Console.WriteLine("Enter size of array: ");
+            int sizeInput = int.Parse(Console.ReadLine());
+            int[] arrayInput = new int[sizeInput]; 
+            GetUserInputArray(arrayInput);
             int sum = 0;
             int product = 1;
-            foreach(int num in arr)
+            foreach(int num in arrayInput)
             {
                 sum += num;
                 product *= num;
             }
-            return (sum == product) ? "Yes" : "No"; 
+            string str = "Perfect Sequence?: ";
+            return (sum == product) ? $"{str}Yes" : $"{str}No"; 
         }
 
         public static string SumOfRows(int[,] arr)
@@ -92,41 +99,56 @@ namespace Prework_CodeChallenges
             }
             return str;
         }
+        public static string SumOfRows()
+        {
+            Console.WriteLine("Enter size of sub-arrays: ");
+            int sizeInput = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter number of array elements in sub array: ");
+            int arrayElement = int.Parse(Console.ReadLine());            
+            int[,] arrayInput = new int[sizeInput,arrayElement];
+
+            for (int x = 0; x < arrayInput.GetLength(0); x ++) 
+            {
+                for (int y = 0; y < arrayInput.GetLength(1); y ++) 
+                {
+                    Console.Write($"Array {x + 1} Index {y}: Enter element: ");
+                    arrayInput[x, y] = int.Parse(Console.ReadLine());
+                    GetNumbersInJaggedArray(arrayInput);
+                }
+            } 
+            int[] result = new int[sizeInput];
+            int rowSum = 0;
+            string str = "";
+            for (int x = 0; x < arrayInput.GetLength(0); x ++) 
+            {
+                for (int y = 0; y < arrayInput.GetLength(1); y ++) 
+                {
+                    rowSum += arrayInput[x, y];
+                }
+                    result[x] = rowSum;
+                    str += $"Row Sum for {x + 1} sub array is {rowSum}\n";
+                    rowSum = 0;   
+            }
+            return $"\nUser array input: {GetNumbersInJaggedArray(arrayInput)}\n{str}";
+        }
         static void Main(string[] args)
         {
-            //Problem #1
+            // Problem #1
             Console.WriteLine("************Problem #1 Array Max Result************");
             Console.WriteLine(ArrayMaxResult());
             
             //Problem #2
-            Console.WriteLine("************Problem #2 Leap Year Calculator************");
+            Console.WriteLine("\n************Problem #2 Leap Year Calculator************");
             Console.WriteLine(LeapYearCalculator());
 
-        //     //Problem #3
-        //     Console.WriteLine("************Problem #3 Perfect Sequence************");
-        //     int[] arr1 = {1, 2, 3};
-        //     int[] arr2 = {0, 0, 0};
-        //     int[] arr3 = {1, 2, 3, 4, 5};
-        //     string answerOne = PerfectSequence(arr1);
-        //     string answerTwo = PerfectSequence(arr3);
-        //     Console.WriteLine($"Result Perfect Sequence: {answerOne}");
-        //     Console.WriteLine($"Result Not Perfect Sequence: {answerTwo}");
-        //     Console.WriteLine();
+            //Problem #3
+            Console.WriteLine("\n************Problem #3 Perfect Sequence************");
+            Console.WriteLine(PerfectSequence());            
 
-        //     //Problem #4
-        //     int[,] mArrayOne = new int[3, 5]
-        //     { 
-        //         { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } 
-        //     };
-        //     int[,] mArrayTwo = new int[7, 8]
-        //     { 
-        //         { 1, 2, 3, 4, 5, 6, 7, 8 }, { 6, 7, 8, 9, 10, 11, 12, 13 }, { 11, 12, 13, 14, 15, 16,17, 20 }, 
-        //         { 1, 2, 3, 4, 5, 6, 7, 23 }, { 6, 7, 8, 9, 10, 11, 12, 40 }, { 11, 12, 13, 14, 15, 16,17, 69 }, 
-        //         { 1, 2, 3, 4, 5, 6, 10, 420 } 
-        //     };
-        //     Console.WriteLine("************Problem #4 Sum of Rows************");
-        //     Console.WriteLine($"Result 1 with {mArrayOne.GetLength(0)} Rows:\n{SumOfRows(mArrayOne)}");
-        //     Console.WriteLine($"Result 2 with {mArrayTwo.GetLength(0)} Rows:\n{SumOfRows(mArrayTwo)}");
+            //Problem #4
+            Console.WriteLine("\n************Problem #4 Sum of Rows************");
+            Console.WriteLine(SumOfRows());
+            int [] arr = {1, 2, 3};
         }
     }
 }
