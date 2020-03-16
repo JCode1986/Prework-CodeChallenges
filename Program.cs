@@ -9,12 +9,12 @@ namespace Prework_CodeChallenges
     {
         public static string GetNumbersInArray(int[] arr)
         {
-            string str = "Array: ";
+            string str = "Array: { ";
             foreach(int num in arr) 
             {
                 str += $"{Convert.ToString(num)}, ";
             }
-            return str;
+            return $"{str}}}";
         }
 
         public static string GetNumbersInJaggedArray(int[,] arr)
@@ -65,7 +65,7 @@ namespace Prework_CodeChallenges
             }
 
             int check = count > 1 ? count * target : target;
-            return $"Result: {check}";
+            return $"Result: {target} showed up {count} time(s)\nTotal: {check}";
         }
 
         public static string LeapYearCalculator()
@@ -92,30 +92,13 @@ namespace Prework_CodeChallenges
             return sum == product ? $"{str}Yes" : $"{str}No"; 
         }
 
-        public static string SumOfRows(int[,] arr)
-        {
-            int[] result = new int[arr.Length];
-            int rowSum = 0;
-            string str = "";
-            for(int x = 0; x < arr.GetLength(0); x ++) 
-            {
-                for(int y = 0; y < arr.GetLength(1); y ++) 
-                {
-                    rowSum += arr[x, y];
-                }
-                    result[x] = rowSum;
-                    str += $"Row Sum for {x + 1} sub array is {rowSum}\n";
-                    rowSum = 0;   
-            }
-            return str;
-        }
         public static string SumOfRows()
         {
             Console.WriteLine("Enter size of sub-arrays: ");
 
             int sizeInput = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter number of array elements in sub array: ");
+            Console.WriteLine("Enter number of elements in sub-array: ");
 
             int arrayElement = int.Parse(Console.ReadLine()); 
             
